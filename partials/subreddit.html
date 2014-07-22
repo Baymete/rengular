@@ -1,0 +1,12 @@
+<div class="row">
+    <h3>{{ sub }}</h3>
+    <ul>
+        <li data-ng-repeat="r in reddit | filter:f">
+            <a href="{{ r.data.url }}">{{ r.data.title }}</a>
+            <button class="btn btn-xs" ng-click="showText = !showText" ng-show="r.data.selftext">+</button>
+			<div ng-show="showText" class="ng-hide">
+				{{ r.data.selftext }}
+			</div>
+        </li>
+    </ul>
+</div>
